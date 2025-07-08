@@ -1,0 +1,41 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" class="main-login">
+    <div class="left-login">
+        <h1>Faça login<br>E crie soluções inovadoras.</h1>
+        <a href="/index.html">
+            <img src="assets/img/svg/login-animate.svg" class="image-login" alt="Logo da Ekolab" />
+        </a>
+    </div>
+
+    <br /><br /><br />
+
+    <div class="right-login">
+        <div class="card-login">
+            <h1>LOGIN</h1>
+
+            <div class="textfield">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" name="usuario" [(ngModel)]="usuario" placeholder="Usuário" required />
+            </div>
+
+            <div class="textfield">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" [(ngModel)]="senha" placeholder="Senha" required />
+            </div>
+
+            <!-- Mensagem de erro -->
+            <div *ngIf="erro" class="alert alert-danger" style="margin-top: 10px;">
+                {{ erro }}
+            </div>
+
+            <div class="remenber-login">
+                <a href="#">Esqueci senha</a>
+            </div>
+
+            <button type="submit" class="btn-login" [disabled]="form.invalid">Login</button>
+
+            <div class="register-link">
+                <p>Não tem uma conta? <a routerLink="/cadastro">Cadastre-se</a></p>
+            </div>
+        </div>
+    </div>
+</form>

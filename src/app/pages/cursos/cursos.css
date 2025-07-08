@@ -1,0 +1,401 @@
+/* Container principal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Geral */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #121212);
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-y: scroll; /* Força o scroll vertical */
+  min-height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Suaviza o movimento do scroll */
+}
+
+/* Header */
+header {
+  color: var(--dark);
+  padding: 20px;
+  text-align: center;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* Adiciona essa propriedade para permitir o texto ir para a linha abaixo */
+}
+
+.cabecalho :hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.logo {
+  margin: 0 auto;
+}
+
+.texto-logo {
+  font-size: 3.5rem;
+  max-width: 100%; /* Impede que o texto ultrapasse a tela */
+  font-weight: bold;
+}
+
+/* Responsividade Navbar */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.322);
+  padding: 1rem 2rem;
+  /* Adiciona um pouco de espaço nas laterais */
+  width: 100%;
+  overflow-x: hidden;
+  /* Impede rolagem horizontal */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que os itens que não cabem na tela se movam para a linha seguinte */
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav ul li {
+  margin: 0 30px;
+}
+
+nav ul li a {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: block;
+  position: relative;
+}
+
+nav ul:hover li a {
+  opacity: 0.3;
+}
+
+nav ul li a:hover {
+  color: #00d4ff;
+  opacity: 1;
+  transform: scale(2.2);
+  transition: transform 0.2s;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #00d4ff;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* Main content */
+main {
+  max-width: 1800px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+/* Header */
+header {
+  transition: background-color 0.3s;
+}
+
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Card fixo à esquerda com scroll */
+.card-scroll {
+  background: #222235; /* Card cursos */
+  box-shadow: 0px 10px 40px #00000056;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow-y: auto;
+  max-height: 80vh;
+  margin-top: 20px;
+}
+
+.card-body {
+  padding: 20px;
+  color: #e0e0e0;
+}
+
+/* Título do Card */
+.card-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f76530;
+  text-transform: uppercase;
+}
+
+/* Texto do Card */
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #bdbdbd;
+}
+
+/* Estilo dos botões do Dropdown */
+.dropdown-toggle {
+  background-color: #212121;
+  border: 2px solid #333;
+  color: #fff;
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background-color: #444;
+  border-color: #777;
+}
+
+/* Menu dropdown */
+.dropdown-menu {
+  background-color: #333;
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Itens do dropdown */
+.dropdown-item {
+  background-color: transparent;
+  color: #ddd;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Efeito de hover nas opções do dropdown */
+.dropdown-item:active {
+  transform: scale(1.05);
+  transition: all 0.1s ease;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  margin-top: 20px; /* Adiciona um espaço superior */
+  background-color: #000; /* Cor de fundo do vídeo */
+  overflow: hidden;
+}
+
+.video-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Customizando a barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px;
+  /* Largura da barra de rolagem */
+  height: 8px;
+  /* Largura da barra horizontal */
+}
+
+/* Track da barra de rolagem (o fundo da barra de rolagem) */
+::-webkit-scrollbar-track {
+  background: #212121; /* Cor do fundo da track */
+  border-radius: 10px;
+}
+
+/* O polegar da barra de rolagem (parte que o usuário arrasta) */
+::-webkit-scrollbar-thumb {
+  background: #ff00cc; /* Cor do polegar */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease; /* Efeito de transição */
+}
+
+/* Hover no polegar da barra de rolagem (efeito quando o mouse passa por cima) */
+::-webkit-scrollbar-thumb:hover {
+  background: #3333ff; /* Cor ao passar o mouse */
+}
+
+/* Para barra de rolagem horizontal */
+::-webkit-scrollbar-horizontal {
+  height: 8px; /* Largura da barra horizontal */
+}
+
+/* Estilo responsivo para dispositivos menores */
+@media (max-width: 768px) {
+  .card-scroll {
+    max-height: none;
+    margin-top: 10px;
+  }
+
+  aside {
+    margin-right: 0;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #121212, #1e1e2f);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.copyright,
+.contact {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links ul li {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 60px;
+  background-color: white;
+  transition: width 0.3s ease;
+  background: linear-gradient(135deg, #6c63ff, #00d4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #333;
+  z-index: 2;
+}
+
+.social-links .icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.social-links img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.social-links .text {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  color: white;
+  font-weight: 500;
+}
+
+.social-links ul li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background-image: linear-gradient(45deg, var(--cor1), var(--cor2));
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.social-links ul li:hover {
+  width: 180px;
+}
+
+.social-links ul li:hover::before {
+  opacity: 1;
+}
+
+.social-links ul li:hover .icon {
+  opacity: 0;
+}
+
+.social-links ul li:hover .text {
+  opacity: 1;
+}
