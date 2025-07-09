@@ -2,8 +2,8 @@
 
 ## 👥 Integrantes do Squad 58
 
-. [Marcus Vinicius de Oliveira](https://github.com/Vinny-Oliver) 
-. [Francisco Lopes](https://github.com/stanlrlopes)
+1. [Marcus Vinicius de Oliveira](https://github.com/Vinny-Oliver) 
+2. [Francisco Lopes](https://github.com/stanlrlopes)
 
 ## 🎯 Tema do Projeto
 
